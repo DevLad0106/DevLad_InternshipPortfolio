@@ -3,10 +3,13 @@ const text1 = "I am a passionate web developer interested in";
 const text2 = "building responsive and modern websites and";
 const text3 = "building clean and responsive user interfaces.";
 
+if(document.getElementById("typing-title")){
 document.getElementById("typing-title").innerHTML = "";
 document.getElementById("typing-text1").innerHTML = "";
 document.getElementById("typing-text2").innerHTML = "";
 document.getElementById("typing-text3").innerHTML = "";
+window.onload = typeTitle;
+}
 let i = 0;
 let j = 0;
 let k = 0;
@@ -50,4 +53,21 @@ function typeText3(){
     }
 }
 
-window.onload = typeTitle;
+
+document.addEventListener("DOMContentLoaded", function(){
+const form = document.getElementById("contactForm");
+const message = document.getElementById("formMessage");
+
+if(form){
+form.addEventListener("submit", function(e){
+
+e.preventDefault(); // stops page refresh
+
+message.innerText = "Your message has been submitted.";
+message.classList.add("show");
+
+form.reset();
+
+});
+}
+});
